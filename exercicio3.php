@@ -1,13 +1,11 @@
 <?php
-$peso = 63.0;
-$altura = 1.73;
-$imc = $peso/($altura*$altura);
-if($imc<18.5){
-    echo "Abaixo do Peso";}
-elseif ($imc>=18.5 && $imc<=25){
-    echo "Peso Ideal";}
-elseif ($imc>=25 && $imc<=30){
-    echo "Acima do Peso";}
-else{
-    echo "Obesidade";
-}    
+$valorCompra = 5000.00;
+$numParcelas = 12;
+$taxaJuros = 1.5 / 100; // Convertendo a taxa de juros para decimal
+
+$valorParcela = $valorCompra / $numParcelas;
+$valorTotalComJuros = $valorCompra * (1 + $taxaJuros);
+
+echo "Valor pago em cada parcela: R$ " . number_format($valorParcela, 2, ",", ".") . "<br>";
+echo "Valor total da compra com juros: R$ " . number_format($valorTotalComJuros, 2, ",", ".");
+?>
